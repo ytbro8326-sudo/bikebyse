@@ -1,0 +1,22 @@
+[
+  {
+    "status": "success",
+    "input_url": "https://bysejikuar.com/e/c3dvgxc1jdrt",
+    "title": "⭐**VC**[►Lucky 2tr1k3 2026 1080p 4MZN W38-DL DDP5 1 H 264-2C0P3◄]**VC**⭐",
+    "code": "c3dvgxc1jdrt",
+    "duration_seconds": 6211,
+    "poster_url": "https://img-place.com/c3dvgxc1jdrt_xt.jpg",
+    "master_m3u8": "https://edge1-moscow-sprintcdn.owphbf24.com/hls2/01/11747/c3dvgxc1jdrt_x/master.m3u8?t=A0q1M9NWH6s9dDtSqx047h7lRIC9jop4YHaK6YcCkzU&s=1787311581&e=10800&f=58739255&srv=1055&asn=133443&sp=5500&p=0",
+    "sources": [
+      {
+        "quality": "x",
+        "label": "1080p",
+        "mime_type": "application/vnd.apple.mpegurl",
+        "url": "https://edge1-moscow-sprintcdn.owphbf24.com/hls2/01/11747/c3dvgxc1jdrt_x/master.m3u8?t=A0q1M9NWH6s9dDtSqx047h7lRIC9jop4YHaK6YcCkzU&s=1787311581&e=10800&f=58739255&srv=1055&asn=133443&sp=5500&p=0",
+        "bitrate_kbps": 1103,
+        "height": 1080,
+        "size_bytes": 876907131
+      }
+    ]
+  }
+]
