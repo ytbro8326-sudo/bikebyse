@@ -1,0 +1,59 @@
+name: Bysejikuar Stream Extractor
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_url:
+        description: 'Bysejikuar Embed URL (e.g. https://bysejikuar.com/e/c3dvgxc1jdrt)'
+        required: false
+        default: 'https://bysejikuar.com/e/c3dvgxc1jdrt'
+        type: string
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '.github/workflows/bysejikuarcom.py'
+      - '.github/workflows/bysejikuar.yml'
+      - 'bysejikuarcom.py'
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    name: Extract Bysejikuar Stream
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || pip install requests cryptography
+
+      - name: Run Bysejikuar Extractor
+        env:
+          PAGE_URL: ${{ inputs.video_url || 'https://bysejikuar.com/e/c3dvgxc1jdrt' }}
+        run: |
+          if [ -f "bysejikuarcom.py" ]; then
+            python bysejikuarcom.py
+          else
+            python .github/workflows/bysejikuarcom.py
+          fi
+
+      - name: Upload Extracted JSON Result
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bysejikuar-extracted-stream
+          path: bysejikuar_extracted.json
+          retention-days: 7
